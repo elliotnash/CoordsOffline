@@ -45,7 +45,6 @@ public class Coords implements TabExecutor {
             //gets uuid and offline player of target, including bedrock players
             Player playerSender = (Player) sender;
 
-            UUID playerTargetUUID;
             OfflinePlayer playerTarget;
 
             Pair<Boolean, OfflinePlayer> offlinePair = getBedrockOfflinePlayer(args[0]);
@@ -62,9 +61,27 @@ public class Coords implements TabExecutor {
 
                 //sends coords to sender
                 sender.spigot().sendMessage(createComponent(args[0], onlineLocation));
+                return true;
+
+            } else if (Main.offlineSupport){
+                Player player = Main.nmsManager.loadOfflinePlayer(playerTarget);
+                if (player!=null){
+                    Location onlineLocation = player.getLocation();
+
+                    //sends coords to sender
+                    sender.spigot().sendMessage(createComponent(args[0], onlineLocation));
+                    return true;
+                }else{
+                    if (!playerTarget.hasPlayedBefore())
+                        sender.sendMessage("Player has not played on this server before");
+                    else
+                        sender.sendMessage("Target is null");
+                    return true;
+                }
 
             } else {
-
+                sender.sendMessage("This version of paper doesn't support offline coordinates.");
+                return true;
             }
 
         }

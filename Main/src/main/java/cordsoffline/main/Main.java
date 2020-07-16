@@ -12,7 +12,8 @@ public final class Main extends JavaPlugin {
     private static Main plugin;
     private static Logger logger;
     public static String geyserPrefix;
-    public NmsManager nmsManager;
+    public static NmsManager nmsManager;
+    public static boolean offlineSupport;
 
     @Override
     public void onEnable() {
@@ -23,14 +24,16 @@ public final class Main extends JavaPlugin {
         config = this.getConfig();
 
         //initialize nms
-
+        offlineSupport = getNMSVersion();
+        if (!offlineSupport){
+            this.setEnabled(false);
+            return;
+        }
 
 
         //Command initialization
         this.getCommand("coords").setExecutor(new Coords());
 
-        if (config.getBoolean("geyserSupport"))
-            geyserPrefix = config.getString("geyserPrefix");
     }
 
     @Override
@@ -47,14 +50,14 @@ public final class Main extends JavaPlugin {
         // Get the last element of the package
 
         try {
-            final Class<?> clazz = Class.forName("org.kitteh.example.plugin.nms." + version + ".NMSHandler");
+            final Class<?> clazz = Class.forName("cordsoffline." + version + ".NMSHandler");
             // Check if we have a NMSHandler class at that location.
             if (NmsManager.class.isAssignableFrom(clazz)) { // Make sure it actually implements NMS
-                this.nmsManager = (NmsManager) clazz.getConstructor().newInstance(); // Set our handler
+                nmsManager = (NmsManager) clazz.getConstructor().newInstance(); // Set our handler
             }
         } catch (final Exception e) {
             e.printStackTrace();
-            this.getLogger().severe("This paper version is not supported yet");
+            this.getLogger().severe("This paper version is not supported yet - check for updates");
             this.getLogger().info("CordsOffline will be run in online only mode");
             return false;
         }

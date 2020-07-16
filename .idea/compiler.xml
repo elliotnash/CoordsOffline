@@ -6,10 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Main" />
-        <module name="CoordsOffline" />
-        <module name="NMSInterface" />
         <module name="v1_16_R1" />
+        <module name="Main" />
+        <module name="NMSInterface" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

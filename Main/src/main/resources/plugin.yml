@@ -2,3 +2,8 @@ name: Main
 version: ${project.version}
 main: cordsoffline.main.Main
 api-version: 1.13
+commands:
+  coords:
+    usage: /hp [page | plugin]
+    description: Displays help
+    permission: coordsoffline.use
