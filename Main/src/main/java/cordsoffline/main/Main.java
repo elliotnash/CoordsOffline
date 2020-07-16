@@ -20,9 +20,6 @@ public final class Main extends JavaPlugin {
         plugin = this;
         logger = getLogger();
 
-        this.saveDefaultConfig();
-        config = this.getConfig();
-
         //initialize nms
         offlineSupport = getNMSVersion();
         if (!offlineSupport){
