@@ -9,7 +9,7 @@
     <version>parent</version>
     <packaging>pom</packaging>
 
-    <name>CordsOffline</name>
+    <name>CordsOffline Parent</name>
 
     <description>Get a players coords even if they are offline</description>
     <properties>

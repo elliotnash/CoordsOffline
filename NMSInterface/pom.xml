@@ -6,7 +6,7 @@
 
     <groupId>CordsOffline</groupId>
     <artifactId>NMSInterface</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>parent</version>
     <packaging>jar</packaging>
 
     <name>CordsOfflineNMSInterface</name>

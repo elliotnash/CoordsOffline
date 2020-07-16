@@ -37,5 +37,15 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.ow2.asm:asm-tree:8.0.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.ow2.asm:asm-analysis:8.0.1" level="project" />
     <orderEntry type="module" module-name="NMSInterface" />
+    <orderEntry type="module" module-name="v1_16_R1" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.destroystokyo.paper:paper:1.16.1-R0.1-SNAPSHOT">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../v1_16_R1/lib/paper-1.16.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
