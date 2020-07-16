@@ -43,7 +43,6 @@ public class Coords implements TabExecutor {
         if (args.length==1){
 
             //gets uuid and offline player of target, including bedrock players
-            Player playerSender = (Player) sender;
 
             OfflinePlayer playerTarget;
 
@@ -51,7 +50,7 @@ public class Coords implements TabExecutor {
             if (offlinePair.getKey()){
                 playerTarget = offlinePair.getValue();
             } else {
-                playerSender.sendMessage(ChatColor.RED+"This player has not played before!");
+                sender.sendMessage(ChatColor.RED+"This player has not played before!");
                 return true;
             }
 
@@ -72,11 +71,7 @@ public class Coords implements TabExecutor {
                     sender.spigot().sendMessage(createComponent(args[0], onlineLocation));
                     return true;
                 }else{
-                    if (!playerTarget.hasPlayedBefore())
-                        sender.sendMessage("Player has not played on this server before");
-                    else
-                        sender.sendMessage("Target is null");
-                    return true;
+                    sender.sendMessage("Target is null");
                 }
 
             } else {

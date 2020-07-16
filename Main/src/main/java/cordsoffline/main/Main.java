@@ -1,6 +1,7 @@
 package cordsoffline.main;
 
 import cordsoffline.nmsinterface.NmsManager;
+import cordsoffline.v1_16_r1.NMSHandler;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -46,20 +47,19 @@ public final class Main extends JavaPlugin {
         String version = packageName.substring(packageName.lastIndexOf('.') + 1);
         // Get the last element of the package
 
-        try {
-            final Class<?> clazz = Class.forName("cordsoffline." + version + ".NMSHandler");
-            // Check if we have a NMSHandler class at that location.
-            if (NmsManager.class.isAssignableFrom(clazz)) { // Make sure it actually implements NMS
-                nmsManager = (NmsManager) clazz.getConstructor().newInstance(); // Set our handler
+        switch(version){
+            case "v1_16_R1":{
+                nmsManager = new NMSHandler();
+                this.getLogger().info("Loading support for " + version);
+                return true;
             }
-        } catch (final Exception e) {
-            e.printStackTrace();
-            this.getLogger().severe("This paper version is not supported yet - check for updates");
-            this.getLogger().info("CordsOffline will be run in online only mode");
-            return false;
+            default:{
+                this.getLogger().severe("This paper version is not supported yet - check for updates");
+                this.getLogger().info("CordsOffline will be run in online only mode");
+                this.getLogger().info("Running paper version "+version);
+                return false;
+            }
         }
-        this.getLogger().info("Loading support for " + version);
-        return true;
     }
 
     public static Main getPlugin(){
