@@ -28,11 +28,15 @@ public class Coords implements TabExecutor {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (sender instanceof Player) {
             if (args.length < 2 ){
-                List<String> playerNames = new LinkedList<>();
-                for (OfflinePlayer player : getOfflinePlayers()){
-                    playerNames.add(player.getName());
+                if (Main.offlineSupport) {
+                    List<String> playerNames = new LinkedList<>();
+                    for (OfflinePlayer player : getOfflinePlayers()) {
+                        playerNames.add(player.getName());
+                    }
+                    return playerNames;
+                } else {
+                    return null;
                 }
-                return playerNames;
             }
         }
         return BLANK;
