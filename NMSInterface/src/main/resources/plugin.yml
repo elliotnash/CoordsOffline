@@ -1,0 +1,4 @@
+name: CordsOfflineNMSInterface
+version: ${project.version}
+main: cordsoffline.cordsofflinenmsinterface.CordsOfflineNMSInterface
+api-version: 1.13

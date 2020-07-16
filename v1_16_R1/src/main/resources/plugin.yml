@@ -1,0 +1,4 @@
+name: CordsOfflinev1_16_R1
+version: ${project.version}
+main: cordsoffline.cordsofflinev1_16_r1.CordsOfflinev1_16_R1
+api-version: 1.13

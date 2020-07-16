@@ -1,0 +1,4 @@
+name: Main
+version: ${project.version}
+main: cordsoffline.main.Main
+api-version: 1.13
