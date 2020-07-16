@@ -4,6 +4,6 @@ main: cordsoffline.main.Main
 api-version: 1.13
 commands:
   coords:
-    usage: /hp [page | plugin]
-    description: Displays help
+    usage: /coords player
+    description: Find the coords of a player
     permission: coordsoffline.use

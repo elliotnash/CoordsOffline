@@ -1,7 +1,8 @@
 package cordsoffline.main;
 
 import cordsoffline.nmsinterface.NmsManager;
-import cordsoffline.v1_16_r1.NMSHandler;
+import cordsoffline.v1_15_r1.v1_15_R1;
+import cordsoffline.v1_16_r1.v1_16_R1;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -15,6 +16,8 @@ public final class Main extends JavaPlugin {
     public static String geyserPrefix;
     public static NmsManager nmsManager;
     public static boolean offlineSupport;
+
+    //TODO don't show offline players in tabcomplete if running in compatibility mode
 
     @Override
     public void onEnable() {
@@ -49,7 +52,12 @@ public final class Main extends JavaPlugin {
 
         switch(version){
             case "v1_16_R1":{
-                nmsManager = new NMSHandler();
+                nmsManager = new v1_16_R1();
+                this.getLogger().info("Loading support for " + version);
+                return true;
+            }
+            case "v1_15_R1":{
+                nmsManager = new v1_15_R1();
                 this.getLogger().info("Loading support for " + version);
                 return true;
             }
