@@ -1,9 +1,15 @@
-name: Main
+name: CoordsOffline
 version: ${project.version}
 main: cordsoffline.main.Main
 api-version: 1.13
+author: Elliot
+description: A plugin to view the coordinates of a player who's offline or online.
 commands:
   coords:
     usage: /coords player
     description: Find the coords of a player
     permission: coordsoffline.use
+permissions:
+  coordsoffline.use:
+    description: Allows use of the /coords command
+    default: op
