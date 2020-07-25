@@ -5,6 +5,7 @@ import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
 import net.md_5.bungee.api.chat.TextComponent;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
@@ -12,11 +13,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.TabExecutor;
 import org.bukkit.entity.Player;
+import org.bukkit.util.StringUtil;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 import static org.bukkit.Bukkit.getOfflinePlayers;
 
@@ -33,7 +32,7 @@ public class Coords implements TabExecutor {
                     for (OfflinePlayer player : getOfflinePlayers()) {
                         playerNames.add(player.getName());
                     }
-                    return playerNames;
+                    return StringUtil.copyPartialMatches(args[0], playerNames, new ArrayList<>());
                 } else {
                     return null;
                 }
