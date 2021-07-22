@@ -29,7 +29,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.28" level="project" />
     <orderEntry type="module" module-name="NMSInterface" />
     <orderEntry type="module" module-name="v1_16_R1" />
-    <orderEntry type="library" name="Maven: CordsOffline:NMSInterface:parent" level="project" />
     <orderEntry type="module" module-name="v1_15_R1" />
   </component>
 </module>
