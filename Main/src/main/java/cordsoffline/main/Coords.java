@@ -1,6 +1,5 @@
 package cordsoffline.main;
 
-import javafx.util.Pair;
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
 import net.md_5.bungee.api.chat.HoverEvent;
@@ -46,13 +45,8 @@ public class Coords implements TabExecutor {
         if (args.length==1){
 
             //gets uuid and offline player of target, including bedrock players
-
-            OfflinePlayer playerTarget;
-
-            Pair<Boolean, OfflinePlayer> offlinePair = getBedrockOfflinePlayer(args[0]);
-            if (offlinePair.getKey()){
-                playerTarget = offlinePair.getValue();
-            } else {
+            OfflinePlayer playerTarget = getBedrockOfflinePlayer(args[0]);
+            if (playerTarget == null) {
                 sender.sendMessage(ChatColor.RED+"This player has not played before!");
                 return true;
             }
@@ -86,14 +80,14 @@ public class Coords implements TabExecutor {
         return false;
     }
 
-    public static Pair<Boolean, OfflinePlayer> getBedrockOfflinePlayer(String playerName){
+    public static OfflinePlayer getBedrockOfflinePlayer(String playerName){
         OfflinePlayer[] offlinePLayers = getOfflinePlayers();
         for (OfflinePlayer player : offlinePLayers){
             if (player.getName().equals(playerName)){
-                return new Pair<>(true, player);
+                return player;
             }
         }
-        return new Pair<>(false, null);
+        return null;
     }
 
     public static TextComponent createComponent(String name, Location location){
