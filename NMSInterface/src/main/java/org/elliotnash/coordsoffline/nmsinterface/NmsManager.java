@@ -1,4 +1,4 @@
-package cordsoffline.nmsinterface;
+package org.elliotnash.coordsoffline.nmsinterface;
 
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;

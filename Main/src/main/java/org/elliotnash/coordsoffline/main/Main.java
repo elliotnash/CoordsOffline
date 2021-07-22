@@ -1,8 +1,8 @@
-package cordsoffline.main;
+package org.elliotnash.coordsoffline.main;
 
-import cordsoffline.nmsinterface.NmsManager;
-import cordsoffline.v1_15_r1.v1_15_R1;
-import cordsoffline.v1_16_r1.v1_16_R1;
+import org.elliotnash.coordsoffline.nmsinterface.NmsManager;
+import org.elliotnash.coordsoffline.v1_15_r1.v1_15_R1;
+import org.elliotnash.coordsoffline.v1_16_r1.v1_16_R1;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 

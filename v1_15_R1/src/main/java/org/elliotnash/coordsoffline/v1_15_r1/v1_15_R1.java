@@ -1,7 +1,7 @@
-package cordsoffline.v1_15_r1;
+package org.elliotnash.coordsoffline.v1_15_r1;
 
 import com.mojang.authlib.GameProfile;
-import cordsoffline.nmsinterface.NmsManager;
+import org.elliotnash.coordsoffline.nmsinterface.NmsManager;
 import net.minecraft.server.v1_15_R1.*;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
