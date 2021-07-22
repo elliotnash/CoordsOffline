@@ -9,7 +9,7 @@
     <version>parent</version>
     <packaging>jar</packaging>
 
-    <name>CordsOfflinev1_16_R1</name>
+    <name>CordsOffline-v1_16_R1</name>
 
     <properties>
         <java.version>1.8</java.version>
@@ -61,35 +61,23 @@
 
     <repositories>
         <repository>
-            <id>papermc-repo</id>
-            <url>https://papermc.io/repo/repository/maven-public/</url>
-        </repository>
-        <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-            <groupId>com.destroystokyo.paper</groupId>
-            <artifactId>paper-api</artifactId>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
             <version>1.16.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
-
-            <groupId>com.destroystokyo.paper</groupId>
-
-            <artifactId>paper</artifactId>
-
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
             <version>1.16.1-R0.1-SNAPSHOT</version>
-
-            <scope>system</scope>
-
-            <systemPath>${basedir}/lib/paper-1.16.1.jar</systemPath>
-
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>CordsOffline</groupId>
