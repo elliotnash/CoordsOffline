@@ -5,16 +5,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.elliotnash.coordsoffline</groupId>
-    <artifactId>CordsOffline-Main</artifactId>
-    <version>1.0</version>
+    <artifactId>v1_17_R1</artifactId>
+    <version>parent</version>
     <packaging>jar</packaging>
 
-    <name>CordsOffline</name>
+    <name>CordsOffline-v1_17_R1</name>
 
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <parent>
+        <groupId>org.elliotnash.coordsoffline</groupId>
+        <artifactId>CordsOffline-Parent</artifactId>
+        <version>parent</version>
+    </parent>
 
     <build>
         <defaultGoal>clean package</defaultGoal>
@@ -68,46 +74,17 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.17.1-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>org.elliotnash.coordsoffline</groupId>
             <artifactId>NMSInterface</artifactId>
             <version>parent</version>
             <scope>compile</scope>
-            <optional>true</optional>
         </dependency>
-        <dependency>
-            <groupId>org.elliotnash.coordsoffline</groupId>
-            <artifactId>v1_15_R1</artifactId>
-            <version>parent</version>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.elliotnash.coordsoffline</groupId>
-            <artifactId>v1_16_R1</artifactId>
-            <version>parent</version>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.elliotnash.coordsoffline</groupId>
-            <artifactId>v1_16_R2</artifactId>
-            <version>parent</version>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.elliotnash.coordsoffline</groupId>
-            <artifactId>v1_16_R3</artifactId>
-            <version>parent</version>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>org.elliotnash.coordsoffline</groupId>
-            <artifactId>v1_17_R1</artifactId>
-            <version>parent</version>
-            <scope>compile</scope>
-            <optional>true</optional>
-        </dependency>
+
     </dependencies>
 </project>

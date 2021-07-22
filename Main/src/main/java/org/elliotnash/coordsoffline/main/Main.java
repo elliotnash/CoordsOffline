@@ -5,6 +5,7 @@ import org.elliotnash.coordsoffline.v1_15_r1.v1_15_R1;
 import org.elliotnash.coordsoffline.v1_16_r1.v1_16_R1;
 import org.elliotnash.coordsoffline.v1_16_r2.v1_16_R2;
 import org.elliotnash.coordsoffline.v1_16_r3.v1_16_R3;
+import org.elliotnash.coordsoffline.v1_17_r1.v1_17_R1;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -70,6 +71,11 @@ public final class Main extends JavaPlugin {
             }
             case "v1_16_R3":{
                 nmsManager = new v1_16_R3();
+                this.getLogger().info("Loading support for " + version);
+                return true;
+            }
+            case "v1_17_R1":{
+                nmsManager = new v1_17_R1();
                 this.getLogger().info("Loading support for " + version);
                 return true;
             }
