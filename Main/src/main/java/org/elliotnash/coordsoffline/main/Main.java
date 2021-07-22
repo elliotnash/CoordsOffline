@@ -82,7 +82,7 @@ public final class Main extends JavaPlugin {
             default:{
                 this.getLogger().severe("This paper version is not supported yet - check for updates");
                 this.getLogger().info("CordsOffline will be run in online only mode");
-                this.getLogger().info("Running paper version "+version);
+                this.getLogger().info("Running minecraft version "+version);
                 return false;
             }
         }
