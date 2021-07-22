@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>CordsOffline</groupId>
-    <artifactId>CordsOffline-main</artifactId>
+    <groupId>org.elliotnash.coordsoffline</groupId>
+    <artifactId>CordsOffline-Main</artifactId>
     <version>1.0</version>
     <packaging>jar</packaging>
 
@@ -68,21 +68,21 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>CordsOffline</groupId>
+            <groupId>org.elliotnash.coordsoffline</groupId>
             <artifactId>NMSInterface</artifactId>
             <version>parent</version>
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>CordsOffline</groupId>
+            <groupId>org.elliotnash.coordsoffline</groupId>
             <artifactId>v1_16_R1</artifactId>
             <version>parent</version>
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>CordsOffline</groupId>
+            <groupId>org.elliotnash.coordsoffline</groupId>
             <artifactId>v1_15_R1</artifactId>
             <version>parent</version>
             <scope>compile</scope>

@@ -31,6 +31,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: net.md-5:bungeecord-chat:1.16-R0.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.yaml:snakeyaml:1.26" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.spigotmc:spigot:1.16.1-R0.1-SNAPSHOT" level="project" />
-    <orderEntry type="module" module-name="NMSInterface" />
+    <orderEntry type="library" name="Maven: CordsOffline:NMSInterface:parent" level="project" />
   </component>
 </module>
