@@ -1,4 +1,4 @@
-package org.elliotnash.coordsoffline.main;
+package org.elliotnash.coordsoffline.spigot;
 
 import org.elliotnash.coordsoffline.nmsinterface.NmsManager;
 import org.elliotnash.coordsoffline.v1_15_r1.v1_15_R1;
@@ -11,10 +11,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
-public final class Main extends JavaPlugin {
+public final class CoordsOffline extends JavaPlugin {
 
     private static FileConfiguration config;
-    private static Main plugin;
+    private static CoordsOffline plugin;
     private static Logger logger;
     public static String geyserPrefix;
     public static NmsManager nmsManager;
@@ -88,7 +88,7 @@ public final class Main extends JavaPlugin {
         }
     }
 
-    public static Main getPlugin(){
+    public static CoordsOffline getPlugin(){
         return plugin;
     }
 }

@@ -1,4 +1,4 @@
-package org.elliotnash.coordsoffline.main;
+package org.elliotnash.coordsoffline.spigot;
 
 import net.md_5.bungee.api.chat.ClickEvent;
 import net.md_5.bungee.api.chat.ComponentBuilder;
@@ -25,7 +25,7 @@ public class Coords implements TabExecutor {
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
         if (sender instanceof Player) {
             if (args.length < 2 ){
-                if (Main.offlineSupport) {
+                if (CoordsOffline.offlineSupport) {
                     List<String> playerNames = new LinkedList<>();
                     for (OfflinePlayer player : getOfflinePlayers()) {
                         playerNames.add(player.getName());
@@ -58,8 +58,8 @@ public class Coords implements TabExecutor {
                 sender.spigot().sendMessage(createComponent(args[0], onlineLocation));
                 return true;
 
-            } else if (Main.offlineSupport){
-                Player player = Main.nmsManager.loadOfflinePlayer(playerTarget);
+            } else if (CoordsOffline.offlineSupport){
+                Player player = CoordsOffline.nmsManager.loadOfflinePlayer(playerTarget);
                 if (player!=null){
                     Location onlineLocation = player.getLocation();
 
