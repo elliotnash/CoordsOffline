@@ -12,11 +12,24 @@
     <name>CordsOffline</name>
 
     <properties>
-        <!--suppress UnresolvedMavenProperty -->
-        <jenkins.buildNumber>${env.BUILD_NUMBER}</jenkins.buildNumber>
+        <jenkins.buildNumber>DEV</jenkins.buildNumber>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>ci</id>
+            <activation>
+                <property>
+                    <name>env.BUILD_NUMBER</name>
+                </property>
+            </activation>
+            <properties>
+                <jenkins.buildNumber>${env.BUILD_NUMBER}</jenkins.buildNumber>
+            </properties>
+        </profile>
+    </profiles>
 
     <build>
         <defaultGoal>clean package</defaultGoal>
