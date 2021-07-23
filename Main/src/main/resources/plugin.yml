@@ -1,7 +1,7 @@
 name: CoordsOffline
-version: ${project.version}
+version: jenkins-version-number
 main: org.elliotnash.coordsoffline.spigot.CoordsOffline
-api-version: 1.17
+api-version: 1.15
 author: Elliot
 description: A plugin to view the coordinates of a player who's offline or online.
 commands:
