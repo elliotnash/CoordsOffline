@@ -1,6 +1,7 @@
 package org.elliotnash.coordsoffline.spigot;
 
 import org.elliotnash.coordsoffline.nmsinterface.NmsManager;
+import org.elliotnash.coordsoffline.v1_12_r1.v1_12_R1;
 import org.elliotnash.coordsoffline.v1_15_r1.v1_15_R1;
 import org.elliotnash.coordsoffline.v1_16_r1.v1_16_R1;
 import org.elliotnash.coordsoffline.v1_16_r2.v1_16_R2;
@@ -54,6 +55,11 @@ public final class CoordsOffline extends JavaPlugin {
         // Get the last element of the package
 
         switch(version){
+            case "v1_12_R1":{
+                nmsManager = new v1_12_R1();
+                this.getLogger().info("Loading support for " + version);
+                return true;
+            }
             case "v1_15_R1":{
                 nmsManager = new v1_15_R1();
                 this.getLogger().info("Loading support for " + version);
