@@ -1,5 +1,5 @@
 name: CoordsOffline
-version: jenkins-version-number
+version: gitlab-build-id
 main: org.elliotnash.coordsoffline.spigot.CoordsOffline
 api-version: 1.15
 author: Elliot
