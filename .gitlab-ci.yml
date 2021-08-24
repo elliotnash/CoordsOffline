@@ -27,5 +27,6 @@ build-jar:
     - mvn clean package
   artifacts:
     paths:
+      - "echo $CI_PIPELINE_IID"
       - "Main/target/CoordsOffline*"
     expire_in: never
