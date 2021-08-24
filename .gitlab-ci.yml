@@ -18,10 +18,6 @@ stages:
 build-jar:
   stage: build
   script:
-    - "echo THIS IS THE IID RIGHT HERE"
-    - "echo $CI_PIPELINE_IID"
-    - "echo THIS IS THE ID RIGHT HERE"
-    - "echo $CI_PIPELINE_ID"
     - "mvn $MAVEN_OPTS clean package"
   artifacts:
     paths:

@@ -17,21 +17,6 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <profiles>
-        <profile>
-            <id>ci</id>
-            <activation>
-                <property>
-                    <name>env.BUILD_NUMBER</name>
-                </property>
-            </activation>
-            <properties>
-                <!--suppress UnresolvedMavenProperty -->
-                <gitlab.buildID>${env.CI_PIPELINE_IID}</gitlab.buildID>
-            </properties>
-        </profile>
-    </profiles>
-
     <build>
         <defaultGoal>clean package</defaultGoal>
         <plugins>
