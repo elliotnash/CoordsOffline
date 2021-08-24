@@ -27,7 +27,7 @@
             </activation>
             <properties>
                 <!--suppress UnresolvedMavenProperty -->
-                <gitlab.buildID>${env.CI_PIPELINE_IID}</gitlab.buildID>
+                <gitlab.buildID>${env.CI_PIPELINE_ID}</gitlab.buildID>
             </properties>
         </profile>
     </profiles>
