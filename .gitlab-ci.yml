@@ -21,7 +21,11 @@ stages:
   - build
 
 # build stage
-build:
+build-jar:
   stage: build
   script: 
     - mvn clean package
+  artifacts:
+    paths:
+      - "Main/target/CoordsOffline*"
+    expire_in: 0
