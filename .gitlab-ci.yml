@@ -15,7 +15,7 @@ stages:
   - build
 
 # build stage
-build-jar:
+build:jar:
   stage: build
   script:
     - "mvn $MAVEN_OPTS clean package"
