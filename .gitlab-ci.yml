@@ -23,11 +23,11 @@ stages:
 # build stage
 build-jar:
   stage: build
-  script: 
+  script:
+    - "echo THIS IS THE ID RIGHT HERE"
+    - "echo $CI_PIPELINE_IID"
     - mvn clean package
   artifacts:
     paths:
-      - "echo THIS IS THE ID RIGHT HERE"
-      - "echo $CI_PIPELINE_IID"
       - "Main/target/CoordsOffline*"
     expire_in: never
