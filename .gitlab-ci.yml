@@ -28,4 +28,4 @@ build-jar:
   artifacts:
     paths:
       - "Main/target/CoordsOffline*"
-    expire_in: 0
+    expire_in: nil
