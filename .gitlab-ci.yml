@@ -1,6 +1,6 @@
 
 variables:
-  MAVEN_OPTS: "-Dgitlab.buildID=$CI_PIPELINE_ID"
+  MAVEN_OPTS: "-Dgitlab.buildID=$CI_PIPELINE_IID"
 
 # java 16
 image: maven:3-openjdk-16
