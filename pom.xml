@@ -18,6 +18,13 @@
     </properties>
     <url>www.elliotnash.org</url>
 
+    <repositories>
+        <repository>
+            <id>elliot</id>
+            <url>https://repo.elliotnash.org/snapshots</url>
+        </repository>
+    </repositories>
+
     <modules>
 
         <module>Main</module>
@@ -27,6 +34,8 @@
         <module>v1_16_R2</module>
         <module>v1_16_R3</module>
         <module>v1_17_R1</module>
+        <module>v1_18_R1</module>
+        <module>v1_18_R2</module>
         <module>NMSInterface</module>
 
     </modules>

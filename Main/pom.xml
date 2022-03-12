@@ -154,5 +154,19 @@
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>org.elliotnash.coordsoffline</groupId>
+            <artifactId>v1_18_R1</artifactId>
+            <version>parent</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.elliotnash.coordsoffline</groupId>
+            <artifactId>v1_18_R2</artifactId>
+            <version>parent</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 </project>
