@@ -12,24 +12,10 @@
     <name>CordsOffline</name>
 
     <properties>
-        <jenkins.buildNumber>DEV</jenkins.buildNumber>
+        <gitlab.buildID>DEV</gitlab.buildID>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <profiles>
-        <profile>
-            <id>ci</id>
-            <activation>
-                <property>
-                    <name>env.BUILD_NUMBER</name>
-                </property>
-            </activation>
-            <properties>
-                <jenkins.buildNumber>${env.BUILD_NUMBER}</jenkins.buildNumber>
-            </properties>
-        </profile>
-    </profiles>
 
     <build>
         <defaultGoal>clean package</defaultGoal>
@@ -75,8 +61,8 @@
                     <file>target/classes/plugin.yml</file>
                     <replacements>
                         <replacement>
-                            <token>jenkins-version-number</token>
-                            <value>${project.version}-b${jenkins.buildNumber}</value>
+                            <token>gitlab-build-id</token>
+                            <value>${project.version}-b${gitlab.buildID}</value>
                         </replacement>
                     </replacements>
                 </configuration>
@@ -88,7 +74,7 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-        <finalName>CoordsOffline-${project.version}-b${jenkins.buildNumber}</finalName>
+        <finalName>CoordsOffline-${project.version}-b${gitlab.buildID}</finalName>
     </build>
 
     <repositories>

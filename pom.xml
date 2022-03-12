@@ -20,8 +20,16 @@
 
     <repositories>
         <repository>
+            <id>spigot-repo</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+        </repository>
+        <repository>
             <id>elliot</id>
-            <url>https://repo.elliotnash.org/snapshots</url>
+            <url>https://repo.elliotnash.org/snapshots/</url>
         </repository>
     </repositories>
 

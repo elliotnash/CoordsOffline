@@ -1,0 +1,25 @@
+
+variables:
+  MAVEN_OPTS: "-Dgitlab.buildID=$CI_PIPELINE_IID"
+
+# java 16
+image: maven:3-openjdk-16
+
+# Cache downloaded dependencies and plugins between builds.
+# To keep cache across branches add 'key: "$CI_JOB_NAME"'
+cache:
+  paths:
+    - .m2/repository
+
+stages:
+  - build
+
+# build stage
+build:jar:
+  stage: build
+  script:
+    - "mvn $MAVEN_OPTS clean package"
+  artifacts:
+    paths:
+      - "Main/target/CoordsOffline*"
+    expire_in: never
