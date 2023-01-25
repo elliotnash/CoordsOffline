@@ -7,10 +7,12 @@ import org.elliotnash.coordsoffline.v1_16_r1.v1_16_R1;
 import org.elliotnash.coordsoffline.v1_16_r2.v1_16_R2;
 import org.elliotnash.coordsoffline.v1_16_r3.v1_16_R3;
 import org.elliotnash.coordsoffline.v1_17_r1.v1_17_R1;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.elliotnash.coordsoffline.v1_18_r1.v1_18_R1;
 import org.elliotnash.coordsoffline.v1_18_r2.v1_18_R2;
+import org.elliotnash.coordsoffline.v1_19_r1.v1_19_R1;
+import org.elliotnash.coordsoffline.v1_19_r2.v1_19_R2;
+import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.logging.Logger;
 
@@ -94,6 +96,16 @@ public final class CoordsOffline extends JavaPlugin {
             }
             case "v1_18_R2":{
                 nmsManager = new v1_18_R2();
+                this.getLogger().info("Loading support for " + version);
+                return true;
+            }
+            case "v1_19_R1":{
+                nmsManager = new v1_19_R1();
+                this.getLogger().info("Loading support for " + version);
+                return true;
+            }
+            case "v1_19_R2":{
+                nmsManager = new v1_19_R2();
                 this.getLogger().info("Loading support for " + version);
                 return true;
             }
