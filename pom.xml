@@ -43,7 +43,6 @@
     </repositories>
 
     <modules>
-
         <module>Main</module>
         <module>v1_12_R1</module>
         <module>v1_15_R1</module>
@@ -55,10 +54,10 @@
         <module>v1_18_R2</module>
         <module>v1_19_R1</module>
         <module>v1_19_R2</module>
+        <module>v1_19_R3</module>
+        <module>v1_20_R1</module>
+        <module>v1_20_R2</module>
+        <module>v1_20_R3</module>
         <module>NMSInterface</module>
-
     </modules>
-
-
-
 </project>

@@ -6,7 +6,7 @@
 
     <groupId>org.elliotnash.coordsoffline</groupId>
     <artifactId>CordsOffline-Main</artifactId>
-    <version>1.1</version>
+    <version>1.2.0</version>
     <packaging>jar</packaging>
 
     <name>CordsOffline</name>
@@ -164,6 +164,34 @@
         <dependency>
             <groupId>org.elliotnash.coordsoffline</groupId>
             <artifactId>v1_19_R2</artifactId>
+            <version>parent</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.elliotnash.coordsoffline</groupId>
+            <artifactId>v1_19_R3</artifactId>
+            <version>parent</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.elliotnash.coordsoffline</groupId>
+            <artifactId>v1_20_R1</artifactId>
+            <version>parent</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.elliotnash.coordsoffline</groupId>
+            <artifactId>v1_20_R2</artifactId>
+            <version>parent</version>
+            <scope>compile</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.elliotnash.coordsoffline</groupId>
+            <artifactId>v1_20_R3</artifactId>
             <version>parent</version>
             <scope>compile</scope>
             <optional>true</optional>
