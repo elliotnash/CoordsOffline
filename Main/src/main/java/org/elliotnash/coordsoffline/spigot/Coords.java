@@ -27,12 +27,12 @@ public class Coords implements TabExecutor {
             if (args.length < 2 ){
                 if (CoordsOffline.offlineSupport) {
                     List<String> playerNames = new LinkedList<>();
-                    for (OfflinePlayer player : getOfflinePlayers()) {
+                    for (OfflinePlayer player : CoordsOffline.getAllowedPlayers()) {
                         playerNames.add(player.getName());
                     }
                     return StringUtil.copyPartialMatches(args[0], playerNames, new ArrayList<>());
                 } else {
-                    return null;
+                    return BLANK;
                 }
             }
         }
@@ -44,7 +44,7 @@ public class Coords implements TabExecutor {
         if (args.length==1){
 
             //gets uuid and offline player of target, including bedrock players
-            OfflinePlayer playerTarget = getBedrockOfflinePlayer(args[0]);
+            OfflinePlayer playerTarget = CoordsOffline.getAllowedPlayer(args[0]);
             if (playerTarget == null) {
                 sender.sendMessage(ChatColor.RED+"This player has not played before!");
                 return true;
@@ -79,24 +79,21 @@ public class Coords implements TabExecutor {
         return false;
     }
 
-    public static OfflinePlayer getBedrockOfflinePlayer(String playerName){
-        OfflinePlayer[] offlinePLayers = getOfflinePlayers();
-        for (OfflinePlayer player : offlinePLayers){
-            if (player.getName().equals(playerName)){
-                return player;
-            }
-        }
-        return null;
-    }
-
     public static TextComponent createComponent(String name, Location location){
         //Creates main text components
         TextComponent mainComponent = new TextComponent(name+" is in world "+location.getWorld().getName()+ " with location ");
         mainComponent.setColor( ChatColor.AQUA.asBungee() );
 
+        String worldName = switch(location.getWorld().getName()) {
+            case "world" -> "overworld";
+            case "world_nether" -> "the_nether";
+            case "world_the_end" -> "the_end";
+            default -> location.getWorld().getName();
+        };
+
         TextComponent locationComponent = new TextComponent(location.getX()+", "+location.getY()+", "+location.getZ());
         // Add a click event to the component.
-        locationComponent.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/tp " + name));
+        locationComponent.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/otp " + name));
         locationComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder( "Click to teleport!" ).color(ChatColor.GOLD.asBungee()).create() ) );
         locationComponent.setColor(ChatColor.LIGHT_PURPLE.asBungee());
         //adds location component to main

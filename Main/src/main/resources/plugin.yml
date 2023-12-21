@@ -1,5 +1,5 @@
 name: CoordsOffline
-version: 1.2.0
+version: co-version
 main: org.elliotnash.coordsoffline.spigot.CoordsOffline
 api-version: 1.20
 author: Elliot
@@ -9,7 +9,14 @@ commands:
     usage: /coords player
     description: Find the coords of a player
     permission: coordsoffline.use
+  otp:
+    usage: /otp [source] target
+    description: Teleports a player (including offline players)
+    permission: coordsoffline.teleport
 permissions:
   coordsoffline.use:
     description: Allows use of the /coords command
+    default: op
+  coordsoffline.teleport:
+    description: Allows use of the /otp command
     default: op

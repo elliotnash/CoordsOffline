@@ -1,5 +1,7 @@
 package org.elliotnash.coordsoffline.spigot;
 
+import org.bukkit.OfflinePlayer;
+import org.bukkit.entity.Player;
 import org.elliotnash.coordsoffline.nmsinterface.NmsManager;
 import org.elliotnash.coordsoffline.v1_12_r1.v1_12_R1;
 import org.elliotnash.coordsoffline.v1_15_r1.v1_15_R1;
@@ -18,7 +20,13 @@ import org.elliotnash.coordsoffline.v1_20_r3.v1_20_R3;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
+
+import static org.bukkit.Bukkit.getOfflinePlayers;
+import static org.bukkit.Bukkit.getOnlinePlayers;
 
 public final class CoordsOffline extends JavaPlugin {
     private static FileConfiguration config;
@@ -28,7 +36,7 @@ public final class CoordsOffline extends JavaPlugin {
     public static NmsManager nmsManager;
     public static boolean offlineSupport;
 
-    //TODO don't show offline players in tabcomplete if running in compatibility mode
+    //TODO don't show offline players in tab complete if running in compatibility mode
 
     @Override
     public void onEnable() {
@@ -37,15 +45,10 @@ public final class CoordsOffline extends JavaPlugin {
 
         //initialize nms
         offlineSupport = getNMSVersion();
-        if (!offlineSupport){
-            this.setEnabled(false);
-            return;
-        }
-
 
         //Command initialization
         this.getCommand("coords").setExecutor(new Coords());
-
+        this.getCommand("otp").setExecutor(new OfflineTP());
     }
 
     @Override
@@ -54,7 +57,6 @@ public final class CoordsOffline extends JavaPlugin {
     }
 
     public boolean getNMSVersion(){
-
         String packageName = this.getServer().getClass().getPackage().getName();
         // Get full package string of CraftServer.
         // org.bukkit.craftbukkit.version
@@ -138,6 +140,36 @@ public final class CoordsOffline extends JavaPlugin {
                 this.getLogger().info("Running minecraft version "+version);
                 return false;
             }
+        }
+    }
+
+    public static OfflinePlayer getAllowedPlayer(String playerName){
+        List<OfflinePlayer> offlinePLayers = getAllowedPlayers();
+        for (OfflinePlayer player : offlinePLayers){
+            if (player.getName().equals(playerName)){
+                return player;
+            }
+        }
+        return null;
+    }
+
+    public static Player getPlayerForOfflinePlayer(OfflinePlayer p) {
+        if (p == null) {
+            return null;
+        }
+        if (p.isOnline()) {
+            return (Player) p;
+        } else if (offlineSupport) {
+            return nmsManager.loadOfflinePlayer(p);
+        }
+        return null;
+    }
+
+    public static List<OfflinePlayer> getAllowedPlayers() {
+        if (CoordsOffline.offlineSupport) {
+            return Arrays.asList(getOfflinePlayers());
+        } else {
+            return new ArrayList<>(getOnlinePlayers());
         }
     }
 
