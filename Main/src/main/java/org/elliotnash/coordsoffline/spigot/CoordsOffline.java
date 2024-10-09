@@ -17,12 +17,14 @@ import org.elliotnash.coordsoffline.v1_19_r3.v1_19_R3;
 import org.elliotnash.coordsoffline.v1_20_r1.v1_20_R1;
 import org.elliotnash.coordsoffline.v1_20_r2.v1_20_R2;
 import org.elliotnash.coordsoffline.v1_20_r3.v1_20_R3;
+import org.elliotnash.coordsoffline.v1_21_r1.v1_21_R1;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 import static org.bukkit.Bukkit.getOfflinePlayers;
@@ -134,6 +136,11 @@ public final class CoordsOffline extends JavaPlugin {
                 this.getLogger().info("Loading support for " + version);
                 return true;
             }
+            case "v1_21_R1":{
+                nmsManager = new v1_21_R1();
+                this.getLogger().info("Loading support for " + version);
+                return true;
+            }
             default:{
                 this.getLogger().severe("This paper version is not supported yet - check for updates");
                 this.getLogger().info("CordsOffline will be run in online only mode");
@@ -146,7 +153,7 @@ public final class CoordsOffline extends JavaPlugin {
     public static OfflinePlayer getAllowedPlayer(String playerName){
         List<OfflinePlayer> offlinePLayers = getAllowedPlayers();
         for (OfflinePlayer player : offlinePLayers){
-            if (player.getName().equals(playerName)){
+            if (Objects.equals(player.getName(), playerName)){
                 return player;
             }
         }

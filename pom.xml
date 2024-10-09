@@ -31,7 +31,6 @@
             <id>elliot</id>
             <url>https://repo.elliotnash.org/snapshots/</url>
         </repository>
-        <!-- lol this is sad -->
         <repository>
             <id>elmakers</id>
             <url>https://maven.elmakers.com/repository/</url>
@@ -58,6 +57,7 @@
         <module>v1_20_R1</module>
         <module>v1_20_R2</module>
         <module>v1_20_R3</module>
+        <module>v1_21_R1</module>
         <module>NMSInterface</module>
     </modules>
 </project>
