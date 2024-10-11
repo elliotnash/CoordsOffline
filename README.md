@@ -8,7 +8,7 @@
 
   [![Latest Release][release-shield]][latest-release-url]
   [![Build Status][actions-shield]][actions-url]
-  ![Kotlin][kotlin-shield]
+  [![Kotlin][kotlin-shield]](#)
   <!-- [![Last Commit][last-commit-shield]][last-commit-url]
   [![License][license-shield]][license-url] -->
 </div>
@@ -23,15 +23,15 @@ Please visit the [releases][releases-url] page to download the latest release.
 <summary>Nightly Builds</summary>
 <br>
 
-> [!WARNING]  
-> Nightly builds are **experimental** and **untested**.
-> Builds are distributing for testing purposes only, and may not be stable.
-
 [Nightly builds][actions-url] are available from github actions.
 
 A permalink to the latest nightly build can be found [here][nightly-download-url].
 
 </details>
+
+> [!WARNING]  
+> Nightly builds are **experimental** and **untested**.
+> Builds are distributing for testing purposes only, and may not be stable.
 
 ## Usage
 
