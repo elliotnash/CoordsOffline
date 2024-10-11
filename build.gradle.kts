@@ -4,10 +4,22 @@ val mcVersion: String by project
 plugins {
     kotlin("jvm") version "2.0.20"
     id("com.gradleup.shadow") version "8.3.3"
+    id("net.kyori.blossom") version "2.1.0"
 }
 
 group = "org.elliotnash.coordsoffline"
-version = "2.0.0"
+version = "2.0.1"
+
+// Replace variables in resource-templates dir
+sourceSets {
+    main {
+        blossom {
+            resources {
+                property("version", project.version.toString())
+            }
+        }
+    }
+}
 
 repositories {
     mavenCentral()
