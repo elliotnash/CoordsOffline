@@ -6,9 +6,7 @@ import org.elliotnash.coordsoffline.command.OfflineTP
 
 class CoordsOfflinePlugin : JavaPlugin() {
     override fun onEnable() {
-        val offlinePlayerLoader = getOfflinePlayerLoader()
-
-        getCommand("coords")?.setExecutor(Coords(offlinePlayerLoader))
-        getCommand("otp")?.setExecutor(OfflineTP(offlinePlayerLoader))
+        getCommand("coords")?.setExecutor(Coords())
+        getCommand("otp")?.setExecutor(OfflineTP())
     }
 }

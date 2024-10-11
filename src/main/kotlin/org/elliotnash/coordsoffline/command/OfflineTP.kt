@@ -7,7 +7,6 @@ import org.bukkit.command.CommandSender
 import org.bukkit.command.TabExecutor
 import org.bukkit.entity.Player
 import org.elliotnash.coordsoffline.OfflinePlayerLoader
-import java.util.*
 import kotlin.math.min
 
 interface TpArg
@@ -30,7 +29,7 @@ data class TpPlayerArg(
     val name: String
 ) : TpArg
 
-class OfflineTP(private val offlinePlayerLoader: OfflinePlayerLoader) : TabExecutor {
+class OfflineTP : TabExecutor {
     private fun parseCoord(coord: String): Double? {
         return try {
             if (coord == "~") {
@@ -113,7 +112,7 @@ class OfflineTP(private val offlinePlayerLoader: OfflinePlayerLoader) : TabExecu
             source = sender
             val targetArg = pargs[0]
             if (targetArg is TpPlayerArg) {
-                val targetPlayer = offlinePlayerLoader.loadPlayer(Bukkit.getOfflinePlayer(targetArg.name))
+                val targetPlayer = OfflinePlayerLoader.instance.loadPlayer(Bukkit.getOfflinePlayer(targetArg.name))
                 if (targetPlayer == null) {
                     return false
                 }
@@ -134,13 +133,13 @@ class OfflineTP(private val offlinePlayerLoader: OfflinePlayerLoader) : TabExecu
                 )
             }
         } else {
-            source = offlinePlayerLoader.loadPlayer(Bukkit.getOfflinePlayer((pargs[0] as TpPlayerArg).name))
+            source = OfflinePlayerLoader.instance.loadPlayer(Bukkit.getOfflinePlayer((pargs[0] as TpPlayerArg).name))
             if (source == null) {
                 return false
             }
             val targetArg = pargs[1]
             if (targetArg is TpPlayerArg) {
-                val targetPlayer = offlinePlayerLoader.loadPlayer(Bukkit.getOfflinePlayer(targetArg.name))
+                val targetPlayer = OfflinePlayerLoader.instance.loadPlayer(Bukkit.getOfflinePlayer(targetArg.name))
                 if (targetPlayer == null) {
                     return false
                 }

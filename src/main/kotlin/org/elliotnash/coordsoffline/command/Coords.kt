@@ -13,9 +13,8 @@ import org.bukkit.command.TabExecutor
 import org.bukkit.entity.Player
 import org.bukkit.util.StringUtil
 import org.elliotnash.coordsoffline.OfflinePlayerLoader
-import java.util.*
 
-class Coords(private val offlinePlayerLoader: OfflinePlayerLoader) : TabExecutor {
+class Coords : TabExecutor {
     override fun onTabComplete(
         sender: CommandSender,
         command: Command,
@@ -24,7 +23,7 @@ class Coords(private val offlinePlayerLoader: OfflinePlayerLoader) : TabExecutor
     ): List<String> {
         if (sender is Player) {
             if (args.size < 2) {
-                val playerNames: MutableList<String> = LinkedList<String>()
+                val playerNames = mutableListOf<String>()
                 for (player in Bukkit.getOfflinePlayers()) {
                     if (player.name != null) {
                         playerNames.add(player.name!!)
@@ -51,7 +50,7 @@ class Coords(private val offlinePlayerLoader: OfflinePlayerLoader) : TabExecutor
             }
 
             // Loads player if offline and get coords
-            val player = offlinePlayerLoader.loadPlayer(offlinePlayer)
+            val player = OfflinePlayerLoader.instance.loadPlayer(offlinePlayer)
             if (player != null) {
                 val onlineLocation = player.getLocation()
 
