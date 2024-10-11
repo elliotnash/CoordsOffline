@@ -8,7 +8,6 @@ import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
 import org.elliotnash.coordsoffline.nmsinterface.NmsManager;
 
-
 public class v1_19_R1 implements NmsManager {
     public Player loadOfflinePlayer(OfflinePlayer player) {
         MinecraftServer minecraftserver = MinecraftServer.getServer();
