@@ -8,7 +8,7 @@ plugins {
 }
 
 group = "org.elliotnash.coordsoffline"
-version = "2.0.1"
+version = "2.0.2"
 
 // Replace variables in resource-templates dir
 sourceSets {
