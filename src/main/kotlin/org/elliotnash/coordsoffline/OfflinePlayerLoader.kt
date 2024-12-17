@@ -36,7 +36,7 @@ interface OfflinePlayerLoader {
                 // 1.19.3 - 1.20.1 -> v1_17_R1
                 version <= MCVersion(1, 20, 1) -> v1_17_R1()
                 // 1.20.2 - 1.21.1 -> v1_20_R2
-                version <= MCVersion(1, 21, 1) -> v1_20_R2()
+                version <= MCVersion(1, 21, 4) -> v1_20_R2()
                 // >1.21.1 is untested
                 else -> {
                     warnUntestedVersion(version, "v1_20_R2")
