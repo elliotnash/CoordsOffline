@@ -72,7 +72,7 @@ class Coords : TabExecutor {
             mainComponent.color = ChatColor.AQUA.asBungee()
 
             val locationComponent =
-                TextComponent(location.x.toString() + ", " + location.y + ", " + location.z)
+                TextComponent("${location.blockX}, ${location.blockY}, ${location.blockZ}")
             // Add a click event to the component.
             locationComponent.clickEvent = ClickEvent(ClickEvent.Action.RUN_COMMAND, "/otp $name")
             locationComponent.hoverEvent = HoverEvent(
