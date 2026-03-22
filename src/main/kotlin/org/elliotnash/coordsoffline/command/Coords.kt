@@ -32,7 +32,7 @@ class Coords : TabExecutor {
                 return StringUtil.copyPartialMatches<ArrayList<String>>(
                     args[0],
                     playerNames,
-                    ArrayList<String>()
+                    ArrayList()
                 )
             }
         }
@@ -52,7 +52,7 @@ class Coords : TabExecutor {
             // Loads player if offline and get coords
             val player = OfflinePlayerLoader.instance.loadPlayer(offlinePlayer)
             if (player != null) {
-                val onlineLocation = player.getLocation()
+                val onlineLocation = player.location
 
                 //sends coords to sender
                 sender.spigot().sendMessage(createComponent(args[0], onlineLocation))
@@ -68,7 +68,7 @@ class Coords : TabExecutor {
         fun createComponent(name: String?, location: Location): TextComponent {
             //Creates main text components
             val mainComponent =
-                TextComponent(name + " is in world " + location.getWorld()!!.name + " with location ")
+                TextComponent(name + " is in world " + location.world!!.name + " with location ")
             mainComponent.color = ChatColor.AQUA.asBungee()
 
             val locationComponent =
