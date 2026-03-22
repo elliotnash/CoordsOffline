@@ -132,7 +132,7 @@ class OfflineTP : TabExecutor {
                     source.getLocation().pitch
                 )
             }
-        } else {
+        } else if (pargs.size == 2) {
             source = OfflinePlayerLoader.instance.loadPlayer(Bukkit.getOfflinePlayer((pargs[0] as TpPlayerArg).name))
             if (source == null) {
                 return false
@@ -159,6 +159,8 @@ class OfflineTP : TabExecutor {
                     source.getLocation().pitch
                 )
             }
+        } else {
+            return false
         }
         if (target == null) {
             return false
